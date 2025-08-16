@@ -18,8 +18,11 @@
     .full{grid-column:1 / -1}
     .actions{display:flex; gap:10px; margin-top:16px}
     .btn{background:#0ea5e9; color:#fff; border:none; padding:10px 16px; border-radius:10px; cursor:pointer}
+    .btn.alt{background:#10b981}
     .muted{color:#475569; font-size:14px}
     .note{background:#ecfeff; border:1px solid #bae6fd; padding:12px; border-radius:10px; margin-bottom:12px}
+    .success{display:none; background:#ecfdf5; border:1px solid #a7f3d0; color:#065f46; padding:12px; border-radius:10px; margin-top:12px}
+    .error{display:none; background:#fef2f2; border:1px solid #fecaca; color:#991b1b; padding:12px; border-radius:10px; margin-top:12px}
   </style>
 </head>
 <body>
@@ -40,57 +43,130 @@
       טלפון למידע ורישום: <strong>02-5818970</strong> שלוחה <strong>4</strong> · מייל: <a href="mailto:ms@bym.org.il">ms@bym.org.il</a>
     </div>
 
-    <!-- שימי לב: GitHub Pages אינו תומך בעיבוד טפסים. לפעולה מיידית אפשר להשתמש ב-mailto או בשירות חיצוני. כאן מוגדר mailto כפתרון בסיסי. -->
-    <form id="regForm" action="mailto:ms@bym.org.il" method="post" enctype="text/plain" onsubmit="return validateConsent()">
+    <!-- אפשרות A: שליחה אוטומטית לגוגל שיטס דרך Google Apps Script (מומלץ) -->
+    <!-- ראו בתחתית הקובץ קוד Apps Script וכתובת ה-URL שיש להציב במשתנה ENDPOINT. -->
+    <form id="regForm">
       <div class="row">
         <div>
           <label for="idnum">תעודת זהות</label>
-          <input id="idnum" name="תעודת זהות" inputmode="numeric" pattern="[0-9]{5,10}" required placeholder="מס' ת"ז" />
+          <input id="idnum" name="idnum" inputmode="numeric" pattern="[0-9]{5,10}" required placeholder="מס' ת"ז" />
         </div>
         <div>
           <label for="fname">שם פרטי</label>
-          <input id="fname" name="שם פרטי" required />
+          <input id="fname" name="fname" required />
         </div>
         <div>
           <label for="lname">שם משפחה</label>
-          <input id="lname" name="שם משפחה" required />
+          <input id="lname" name="lname" required />
         </div>
         <div>
           <label for="school">מקום לימודים נוכחי</label>
-          <input id="school" name="מקום לימודים" />
+          <input id="school" name="school" />
         </div>
         <div>
           <label for="phone">טלפון לחזרה</label>
-          <input id="phone" name="טלפון" inputmode="tel" placeholder="05x-xxxxxxx" required />
+          <input id="phone" name="phone" inputmode="tel" placeholder="05x-xxxxxxx" required />
         </div>
         <div>
           <label for="email">דוא"ל</label>
-          <input id="email" name="דוא"ל" type="email" placeholder="name@example.com" required />
+          <input id="email" name="email" type="email" placeholder="name@example.com" required />
         </div>
         <div class="full">
           <label class="full">
-            <input type="checkbox" id="consent" name="אישור שמירת מידע" required />
+            <input type="checkbox" id="consent" name="consent" required />
             אני מאשרת/מאשר כי הנתונים שמסרתי יישמרו במאגרי המידע של סמינר מעלות בית יעקב לצורך יצירת קשר, טיפול בבקשת הרישום ועדכונים מטעמו, בהתאם לדין, לרבות חוק הגנת הפרטיות, התשמ"א‑1981 והתקנות החלות (לרבות תיקון 13). ידוע לי כי עומדות לי הזכויות על פי דין לעיין במידע, לבקש תיקון או מחיקה, והסכמתי ניתנת מרצון וניתנת לביטול בהודעה בכתב.
           </label>
         </div>
       </div>
       <div class="actions">
         <button class="btn" type="submit">שליחה</button>
-        <a class="btn" style="background:#10b981; display:inline-block; text-decoration:none; line-height:38px" href="index.html">חזרה לאתר</a>
+        <a class="btn alt" href="index.html">חזרה לאתר</a>
       </div>
-      <p class="muted">בלחיצה על "שליחה" ייפתח לקוח הדוא"ל שלך עם נתוני הטופס (פתרון בסיסי לאתר סטטי).</p>
+      <div id="ok" class="success">הטופס נשלח בהצלחה. תודה! נחזור אלייך בהקדם.</div>
+      <div id="err" class="error">שליחה נכשלה. אנא נסי שוב מאוחר יותר או שלחי מייל ל- ms@bym.org.il.</div>
+      <p class="muted">הטופס נשלח ישירות לגיליון Google Sheets דרך Apps Script. אין צורך בלקוח דוא"ל.</p>
     </form>
+
+    <hr style="margin:28px 0; border:none; border-top:1px solid #e2e8f0" />
+
+    <!-- אפשרות B: הטמעת Google Form קיימת (העתיקי כאן את קוד ההטמעה של גוגל טפסים) -->
+    <!--
+    <iframe src="PASTE_YOUR_GOOGLE_FORM_EMBED_URL" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">טוען…</iframe>
+    -->
+
+    <!-- אפשרות C (גיבוי): שליחה בדוא"ל -->
+    <!-- <a class="btn" href="mailto:ms@bym.org.il?subject=רישום%20לאתר&body=נא%20לצרף%20פרטים">שליחה בדוא"ל</a> -->
   </main>
 
   <script>
-    function validateConsent(){
-      const c = document.getElementById('consent');
-      if(!c.checked){
-        alert('יש לסמן הסכמה לשמירת המידע כדי להמשיך');
-        return false;
-      }
+    // הציבי כאן את כתובת ה-Web App של Google Apps Script אחרי שיפרסם
+    const ENDPOINT = 'PASTE_APPS_SCRIPT_WEB_APP_URL_HERE';
+
+    async function submitForm(data){
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      // עם no-cors אי אפשר לקרוא תשובה; אם הבקשה לא נכשלה ברשת נציג הצלחה
       return true;
     }
+
+    document.getElementById('regForm').addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const consent = document.getElementById('consent').checked;
+      if(!consent){ alert('יש לסמן הסכמה לשמירת המידע'); return; }
+      if(!ENDPOINT || ENDPOINT.includes('PASTE_APPS_SCRIPT_WEB_APP_URL_HERE')){
+        alert('לא הוגדר שרות שליחה. אנא עדכני את כתובת ה-Apps Script ב- registration.html');
+        return;
+      }
+      const data = {
+        idnum: document.getElementById('idnum').value.trim(),
+        fname: document.getElementById('fname').value.trim(),
+        lname: document.getElementById('lname').value.trim(),
+        school: document.getElementById('school').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        consent: consent,
+        ts: new Date().toISOString()
+      };
+      try {
+        await submitForm(data);
+        document.getElementById('ok').style.display='block';
+        document.getElementById('err').style.display='none';
+        e.target.reset();
+      } catch(err){
+        document.getElementById('ok').style.display='none';
+        document.getElementById('err').style.display='block';
+      }
+    });
   </script>
+
+  <!--
+  ====== Google Apps Script (מדביקים בקובץ Script חדש ב-Apps Script ומחברים לגיליון ======
+  1) צרי Google Sheet חדש עם כותרות בעמודה הראשונה: idnum, fname, lname, school, phone, email, consent, ts
+  2) בגיליון: Extensions → Apps Script → הדביקי את הקוד הבא ושמרי.
+  3) פרסמי כ-Web App: Deploy → New deployment → Type: Web app → Anyone with the link → קבלי URL.
+  4) הציבי את ה-URL במשתנה ENDPOINT למעלה.
+
+  function doPost(e) {
+    const SHEET_NAME = 'Sheet1';
+    const ss = SpreadsheetApp.getActiveSpreadsheet();
+    const sheet = ss.getSheetByName(SHEET_NAME);
+    const data = JSON.parse(e.postData.contents);
+    sheet.appendRow([
+      data.idnum || '',
+      data.fname || '',
+      data.lname || '',
+      data.school || '',
+      data.phone || '',
+      data.email || '',
+      data.consent ? 'yes' : 'no',
+      data.ts || new Date()
+    ]);
+    return ContentService.createTextOutput('OK').setMimeType(ContentService.MimeType.TEXT);
+  }
+  -->
 </body>
 </html>
