@@ -142,6 +142,19 @@
       }
     });
   </script>
+fetch(ENDPOINT, {
+  method: 'POST',
+  body: JSON.stringify(formData)
+})
+.then(res => res.text())
+.then(text => {
+  console.log("Server reply:", text);
+  alert("נשלח בהצלחה!");
+})
+.catch(err => {
+  console.error(err);
+  alert("שגיאה בשליחה");
+});
 
   <!--
   ====== Google Apps Script (מדביקים בקובץ Script חדש ב-Apps Script ומחברים לגיליון ======
