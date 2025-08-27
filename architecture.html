@@ -1,122 +1,93 @@
+<!-- architecture.html (עמוד מסלול אדריכלות ועיצוב פנים) -->
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>הנדסאי אדריכלות ועיצוב פנים – סמינר מעלות בית יעקב</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <style>
-    :root{--ink:#0f172a; --muted:#475569; --bg:#f7fafc; --card:#fff; --brand:#0ea5e9; --ok:#10b981}
-    body{font-family:'Rubik',sans-serif; margin:0; background:var(--bg); color:var(--ink)}
-    .container{max-width:1000px; margin:auto; padding:20px}
-    header{background:#fff; box-shadow:0 2px 4px rgba(0,0,0,.08)}
-    .nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
-    .nav img{height:40px}
-    .nav a{margin:0 10px; text-decoration:none; color:var(--ink); font-weight:500}
-    .nav a.cta{background:var(--brand); color:#fff; padding:8px 14px; border-radius:10px}
-    .hero{display:grid; grid-template-columns:1.1fr .9fr; gap:20px; align-items:center; padding:28px 0}
-    .hero h1{font-size:34px; margin:0 0 6px}
-    .hero p{color:var(--muted); margin:0}
-    .card{background:var(--card); border-radius:12px; padding:18px; box-shadow:0 4px 12px rgba(0,0,0,.08)}
-    .section{padding:28px 0}
-    .section h2{font-size:26px; margin:0 0 10px}
-    .grid{display:grid; gap:16px}
-    .cols-2{grid-template-columns:1fr 1fr}
-    .cols-3{grid-template-columns:repeat(3,1fr)}
-    ul{margin:0 0 0 18px}
-    .gallery{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px}
-    .gallery img{width:100%; height:160px; object-fit:cover; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,.06)}
-    .cta-strip{background:linear-gradient(135deg,var(--ok),var(--brand)); color:#fff; border-radius:12px; padding:18px; display:flex; align-items:center; justify-content:space-between; gap:12px}
-    @media(max-width:900px){.hero{grid-template-columns:1fr}}
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>מסלול אדריכלות ועיצוב פנים | סמינר מעלות בית יעקב</title>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+body {font-family:'Rubik',sans-serif; margin:0; background:#f7fafc; color:#0f172a}
+.container{max-width:960px; margin:auto; padding:20px}
+header{background:#fff; box-shadow:0 2px 4px rgba(0,0,0,.08)}
+.nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
+.nav img{height:40px}
+h1{font-size:34px; margin:20px 0}
+h2{font-size:24px; margin-top:28px; margin-bottom:12px}
+p{line-height:1.6}
+.gallery{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:20px}
+.gallery img{width:100%; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1)}
+.hero{display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:center; padding:28px 0}
+.highlight-box {background:#fff; border:2px solid #0ea5e9; border-radius:12px; padding:20px; margin-top:30px; box-shadow:0 4px 12px rgba(0,0,0,0.08)}
+.highlight-box h2{margin-top:0; color:#0ea5e9}
+.staff{background:#fffbeb; border:1px solid #facc15}
+</style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <a href="index.html" style="text-decoration:none; color:inherit; display:flex; gap:10px; align-items:center">
-        <img src="asset/logo.png" alt="לוגו" />
-      </a>
-      <nav>
-        <a href="index.html#tracks">מסלולים</a>
-        <a class="cta" href="registration.html">רישום</a>
-      </nav>
-    </div>
-  </header>
+<header>
+<div class="container nav">
+<a href="index.html" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:10px">
+<strong style="font-size:20px">סמינר מעלות בית יעקב</strong>
+<img src="assets/logo.png" alt="לוגו" />
+</a>
+</div>
+</header>
 
-  <main class="container">
-    <section class="hero">
-      <div>
-        <h1>הנדסאי אדריכלות ועיצוב פנים</h1>
-        <p>מסלול משולב המפתח חשיבה תכנונית־מרחבית, ידע הנדסי בסיסי וכישורי עיצוב פנים מודרניים – מהסקיצה ועד מודל תלת־ממדי והגשת סט תוכניות מלא.</p>
-      </div>
-      <div class="card">
-        <div class="gallery">
-          <img src="asset/arch-floorplan.svg" alt="תרשים קומת טיפוסית – תכנית אדריכלית" />
-          <img src="asset/arch-section.svg" alt="חתך מבנה והדמיית חזית" />
-          <img src="asset/arch-interior.svg" alt="ויזואליזציה של חלל פנים" />
-          <img src="asset/arch-facade.svg" alt="מודל מסה תלת־ממדי לחזית" />
-        </div>
-      </div>
-    </section>
 
-    <section class="section">
-      <h2>מהות המסלול</h2>
-      <div class="card">
-        <p>
-          המסלול מכשיר הנדסאיות אדריכלות להשתלבות בתחום התכנון והעיצוב: עבודה בסטודיו, הבנת תהליך התכנון, הכרת תקנות ותווי תקן, חומרים ושיטות בנייה, תיאום בין־תחומי ומעבר מתכנון קונספט לתיעוד ביצוע מפורט.
-        </p>
-      </div>
-    </section>
+<main class="container">
+<h1>מסלול אדריכלות ועיצוב פנים</h1>
+<p>
+מסלול האדריכלות ועיצוב פנים בסמינר מעניק לתלמידות ידע מקצועי מקיף בתחומי תכנון מבנים, עיצוב חללים, תאורה, חומרים וטכנולוגיות בנייה. בהתאם להנחיות המגמה הארצית (ראו באתר משרד החינוך),
+הלימודים כוללים שילוב בין לימוד עיוני ומעשי: מתמטיקה שימושית, הנדסת בניין, יסודות העיצוב, תולדות האדריכלות, תוכנות שרטוט ותכנון, ופרויקטים מעשיים.
+</p>
 
-    <section class="section">
-      <h2>מקצועות ונושאי לימוד מרכזיים</h2>
-      <div class="grid cols-2">
-        <div class="card">
-          <ul>
-            <li>יסודות המרחב, קומפוזיציה ותכן אדריכלי (סטודיו תכנון).</li>
-            <li>עיצוב פנים, תכנון ריהוט וארגונומיה.</li>
-            <li>יסודות השרטוט ושרטוט ממוחשב (CAD), קריאת תוכניות ומדידות.</li>
-            <li>תורת הבנייה, סטטיקה בסיסית, חומרים וטכנולוגיות בנייה.</li>
-            <li>מערכות בניין: חשמל, תאורה, מיזוג, אינסטלציה וניקוז.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <ul>
-            <li>תקנים, נגישות, בטיחות ואקוסטיקה בסיסית.</li>
-            <li>תיעוד אדריכלי מתקדם: תוכניות, חתכים, חזיתות ופרטי ביצוע.</li>
-            <li>מודלים פיזיים ודיגיטליים, הדמיה ותצוגה.</li>
-            <li>ניהול פרויקט ופרויקט גמר מקיף.</li>
-          </ul>
-        </div>
-      </div>
-      <p class="muted" style="margin-top:8px">* פירוט התכנית מבוסס על קווי־היסוד של תכנית הלימודים הרשמית והאוגדנים של מגמת 2311 – אדריכלות ועיצוב פנים.</p>
-    </section>
 
-    <section class="section">
-      <h2>כלי תוכנה ותוצרים</h2>
-      <div class="card">
-        <p>
-          במהלך הלימודים נרכשות שליטות מעשיות בתוכנות מקצועיות: <strong>AutoCAD</strong> לשרטוט ותיעוד, <strong>Revit</strong> ל־BIM ודגם מידע בניין, <strong>SketchUp</strong> למידול מהיר ו־<strong>V‑Ray</strong> להדמיה פוטוריאליסטית, לצד כלים משלימים לפי צורך.
-        </p>
-        <p>התוצרים כוללים סט תוכניות מלא, מודלי תלת־ממד, פרטי ביצוע והדמיות איכותיות כחלק מתיק עבודות.</p>
-      </div>
-    </section>
+<h2>מקצועות מרכזיים</h2>
+<ul>
+<li>תכנון ושרטוט אדריכלי</li>
+<li>עיצוב פנים ותאורה</li>
+<li>מבואות בהנדסת בניין וחומרים</li>
+<li>תולדות האדריכלות והעיצוב</li>
+<li>תרגול ופרויקטים מעשיים</li>
+</ul>
 
-    <section class="section">
-      <div class="cta-strip">
-        <div>
-          <strong>רוצה לשמוע עוד?</strong>
-          <div>צוות הרישום מחכה לפנייה שלך לשאלות והתאמה למסלול.</div>
-        </div>
-        <a class="cta" href="registration.html" style="background:#00000022; text-decoration:none">מעבר לרישום</a>
-      </div>
-    </section>
-  </main>
 
-  <footer>
-    <div class="container" style="text-align:center; color:#64748b; padding:16px 0">© <span id="y"></span> סמינר מעלות בית יעקב</div>
-  </footer>
+<h2>תוכנות נלמדות</h2>
+<p>
+במסלול זה התלמידות רוכשות ידע מעשי רחב בשימוש בתוכנות המובילות בתחום:
+<strong>AutoCAD, Revit, SketchUp, V-Ray</strong> ועוד. השימוש בתוכנות אלו מאפשר לתלמידות ליישם תכנון ושרטוט ברמה מקצועית גבוהה.
+</p>
 
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+
+<div class="highlight-box">
+<h2>אנשי צוות</h2>
+<p>במסלול מלמדות מרצות מהשורה הראשונה בשוק האדריכלות והעיצוב. רכזת המסלול: <strong>גב' שטרנבוך</strong>.</p>
+</div>
+
+
+<h2>גלריה</h2>
+<p class="muted">דוגמאות להדמיות ועבודות אדריכליות (תמונות המחשה ללא דמויות).</p>
+<div class="gallery">
+<img src="assets/architecture1.jpg" alt="הדמיה ממוחשבת של מבנה מתוכנן" />
+<img src="assets/architecture2.jpg" alt="מודל תלת ממדי של חלל פנים" />
+<img src="assets/architecture3.jpg" alt="שרטוט טכני בתוכנת AutoCAD" />
+<img src="assets/architecture4.jpg" alt="תכנון מבנה בתוכנת Revit" />
+</div>
+<section class="section">
+<h2>צוות ההוראה</h2>
+<div class="card staff">
+<p><strong>מרצות מהשורה הראשונה בשוק</strong> – בעלות ניסיון עשיר בתכנון, עיצוב וביצוע, המגיעות מהשדה המקצועי והאקדמי.</p>
+<p>רכזת המסלול: <strong>גב' שטרנבוך</strong>.</p>
+</div>
+</section>
+</main>
+
+
+<footer class="container" style="margin-top:40px; padding:20px 0; text-align:center; color:#64748b; font-size:14px">
+<p>© <span id="y"></span> סמינר מעלות בית יעקב. כל הזכויות שמורות.</p>
+</footer>
+
+
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
